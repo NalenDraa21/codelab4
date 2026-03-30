@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kazuha Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+
+    <div style="display:flex; margin:20px; gap:20px;">
+
+        <!-- bagian kiri gambar -->
+        <div style="width:300px;">
+            <div class="w3-card-4">
+                <img src="person.png" alt="person" width="100%">
+                <div class="w3-container">
+                    <h3><b>Kaedehara Kazuha</b></h3>
+                    <p>Boss of All Boss</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- bagian kanan tab -->
+        <div style="flex:1;">
+            <div class="w3-bar w3-light-grey">
+                <button class="w3-bar-item w3-button tablink w3-red"
+                    onclick="openCity(event,'General')">General</button>
+
+                <button class="w3-bar-item w3-button tablink"
+                    onclick="openCity(event,'Gameplay')">Gameplay</button>
+
+                <button class="w3-bar-item w3-button tablink"
+                    onclick="openCity(event,'Constellation')">Constellation</button>
+            </div>
+
+            <div id="General" class="w3-container w3-border city">
+                <h2>General</h2>
+                <p>Kaedehara Kazuha is a playable Anemo character in Genshin Impact.</p>
+            </div>
+
+            <div id="Gameplay" class="w3-container w3-border city" style="display:none">
+                <h2>Gameplay</h2>
+                <p>Charged Attack</p>
+                <p>Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.</p>
+
+                <p>Plunging Attack</p>
+                <p>Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact. If this Plunging Attack is triggered by Chihayaburu, it will be converted to Plunging Attack: Midare Ranzan.</p>
+
+                <p>Plunging Attack: Midare Ranzan</p>
+                <p>When a Plunging Attack is performed using the effects of the Elemental Skill Chihayaburu, Plunging Attack DMG is converted to Anemo DMG and will create a small wind tunnel via a secret blade technique that pulls in nearby objects and opponents.</p>
+            </div>
+
+            <div id="Constellation" class="w3-container w3-border city" style="display:none">
+                <h2>Constellation</h2>
+                <p>Constellation Level 6, Crimson Momiji Crimson Momiji: "After using Chihayaburu or Kazuha Slash, Kaedehara Kazuha gains an Anemo Infusion for 5s. Additionally, each point of Elemental Mastery will increase the DMG dealt by Kaedehara Kazuha's Normal, Charged, and Plunging Attacks by 0.2%."</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function openCity(evt, cityName) {
+            let i;
+            let x = document.getElementsByClassName("city");
+            let tablinks = document.getElementsByClassName("tablink");
+
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className =
+                    tablinks[i].className.replace(" w3-red", "");
+            }
+
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " w3-red";
+        }
+    </script>
+
+</body>
+</html>
